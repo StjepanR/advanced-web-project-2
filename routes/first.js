@@ -8,7 +8,7 @@ router.get('/safe', function(req, res, next) {
 
 /* GET second unsafe endpoint. */
 router.get('/unsafe', function(req, res, next) {
-    res.render('index', { title: 'Nesigurna pohrana osjetljivih podataka (Sensitive Data Exposure)\n' });
+    res.render('pages/index', { title: 'Nesigurna pohrana osjetljivih podataka (Sensitive Data Exposure)\n' });
 });
 
 module.exports = router;

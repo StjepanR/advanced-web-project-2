@@ -1,11 +1,12 @@
 {
-  "name": "advanced-web-project2",
+  "name": "advanced-web-project-2",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bootstrap4-toggle": "^3.6.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
