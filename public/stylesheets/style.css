@@ -1,8 +1,15 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.nav>li>a:hover {
+  background-color: cornflowerblue;
+  color: white;
 }
 
-a {
-  color: #00B7FF;
+.nav>li>a:focus {
+  background-color: cornflowerblue;
+}
+
+form {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 80px;
 }
