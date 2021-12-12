@@ -49,16 +49,16 @@ router.post('/unsafe', async function(req, res, next) {
     safe_search_sql = `select email, password, role from users where email like ?;`
     safe_insert_sql = `insert into users (email, password, role) values (?, ?, ?)`;
 
-    var salt = await bcrypt.genSalt(10);
-    var password = await bcrypt.hash(req.body.password, salt);
-
     role = 'user';
 
-    //nesigurna deserilizacija
+    // nesigurna deserilizacija
     var unserialized = JSON.stringify(req.body);
     var obj = serialize.unserialize(unserialized);
 
-    db.run(safe_insert_sql, [req.body.email, password, role], (err) => {
+    var salt = await bcrypt.genSalt(10);
+    var password = await bcrypt.hash(obj.password, salt);
+
+    db.run(safe_insert_sql, [obj.email, password, role], (err) => {
         if (err) {
             throw err;
         } else {

@@ -23,7 +23,8 @@ router.post('/safe',
 
     db.run(safe_insert_sql, [req.body.email, password, 'user'], (err) => {
         if (err) {
-            throw err;
+            res.status(500);
+            res.render('pages/error', { title: 'Error',  error: err});
         } else {
             console.log('A row has been successfully inserted.');
         }
@@ -31,7 +32,8 @@ router.post('/safe',
 
     db.all(safe_search_sql, req.body.email, (err, rows) => {
         if (err) {
-            throw err;
+            res.status(500);
+            res.render('pages/error', { title: 'Error',  error: err});
         } else {
             rows.forEach((row) => {
                 console.log(row);
@@ -49,7 +51,8 @@ router.post('/unsafe',  function(req, res, next) {
 
     db.run(unsafe_insert_sql, [req.body.email, req.body.password, 'user'], (err) => {
         if (err) {
-            throw err;
+            res.status(500);
+            res.render('pages/error', { title: 'Error',  error: err});
         } else {
             console.log('A row has been successfully inserted.');
         }
@@ -57,7 +60,8 @@ router.post('/unsafe',  function(req, res, next) {
 
     db.all(unsafe_search_sql, (err, rows) => {
         if (err) {
-            throw err;
+            res.status(500);
+            res.render('pages/error', { title: 'Error',  error: err});
         } else {
             rows.forEach((row) => {
                 console.log(row);
