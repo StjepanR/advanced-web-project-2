@@ -4,7 +4,3 @@ function toggle_security() {
 
     form.action = form.action + action;
 }
-
-function render() {
-
-}

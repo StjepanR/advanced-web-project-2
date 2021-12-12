@@ -14,11 +14,16 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "express-fileupload": "^1.2.1",
+    "express-validator": "^6.14.0",
     "file-upload": "^0.0.0",
-    "http-errors": "~1.6.3",
+    "http-errors": "^1.6.3",
+    "libxmljs": "^0.19.7",
     "morgan": "~1.9.1",
     "node-serialize": "^0.0.4",
+    "npm": "^8.3.0",
     "sqlite3": "^5.0.2",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "xmldoc": "^1.1.2",
+    "xmldom": "^0.6.0"
   }
 }

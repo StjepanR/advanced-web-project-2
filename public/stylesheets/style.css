@@ -13,3 +13,12 @@ form {
   padding-top: 50px;
   padding-bottom: 80px;
 }
+
+.border {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+span {
+  padding-top: 75px;
+}

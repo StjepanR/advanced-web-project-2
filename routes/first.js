@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require("../db/index");
 var bcrypt = require("bcrypt");
+const {check} = require('express-validator');
 
 /* GET second endpoint. */
 router.get('/', function(req, res, next) {
@@ -9,7 +10,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* POST on first safe endpoint. */
-router.post('/safe',  async function (req, res, next) {
+router.post('/safe',
+    check('email').not().isEmpty().withMessage('Latitude is requierd'),
+    check('password').not().isEmpty().withMessage('Longitude is required'),
+    async function (req, res, next) {
     console.log(req.body);
     safe_search_sql = `select email, password from users where email like ?;`
     safe_insert_sql = `insert into users (email, password, role) values (?, ?, ?)`;
