@@ -9,7 +9,7 @@ let db = new sqlite3.Database(':memory:', (err) => {
     }
 });
 
-var create_user_table_sql = `create table users (email text not null, password text not null, role text not null);`;
+var create_user_table_sql = `create table users (email text, password text, role text not null);`;
 
 var insert_user_table_sql = `insert into users (email, password, role) values ('example1@example.com', 'lozinka123', 'user'), ('example2@example.com', 'lozinka123', 'admin');`;
 

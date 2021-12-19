@@ -29,7 +29,6 @@ router.post('/safe', function(req, res, next) {
 
         res.render('pages/second', {result: response, title: 'safe'});
 
-
     } catch (err) {
         try {
             var xmlStringSerialized = libxmljs.parseXml(xml);
